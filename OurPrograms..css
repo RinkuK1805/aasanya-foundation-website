@@ -1,0 +1,351 @@
+/* Base styles (same as homepage) */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.header-right p {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    /* aligns all links to the right */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+    /* needed for underline animation */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: 500;
+    padding: 6px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    /* smooth color change */
+}
+
+/* Hover animation: underline sliding from left */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #2e7d32;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    /* underline expands smoothly */
+}
+
+.navbar a:hover {
+    color: #1b5e20;
+    /* optional color change on hover */
+}
+
+
+/* Navbar container */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown link styling */
+.dropdown>a {
+    text-decoration: none;
+    color: #2e7d32;
+    /* padding: 6px 10px; */
+    /* display: block; */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hidden dropdown list */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 230px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: #2e7d32;
+}
+
+.dropdown-content li a:hover {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* slide up into place */
+}
+
+/* Dropdown container for Connect With Us */
+.connect-dropdown {
+    position: relative;
+}
+
+/* Hidden dropdown links */
+.connect-dropdown .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* align dropdown under the button */
+    background-color: #ffffff;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    /* hidden by default */
+    visibility: hidden;
+    transform: translateY(10px);
+    /* slide down effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+/* Show dropdown on hover */
+.connect-dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* slide into place */
+}
+
+/* Dropdown links styling */
+.connect-dropdown .dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.connect-dropdown .dropdown-content li a:hover {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+/* Program container */
+.program {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 40px;
+    /* space between text and image */
+    flex-wrap: wrap;
+    /* allow stacking on small screens */
+}
+
+/* Reverse layout for alternating programs */
+.program.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Text container */
+.program-text {
+    flex: 1 1 400px;
+    padding: 20px 0% 20px 10%;
+}
+
+/* Program headings */
+.program-text h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+/* Text paragraph */
+.program-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Image container */
+.program-image {
+    flex: 1 1 400px;
+    /* grow, shrink, minimum width 400px */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* center image horizontally */
+}
+
+/* Program images */
+.program-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .program {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .program.reverse {
+        flex-direction: column;
+    }
+
+    .program-image {
+        padding: 10px 0;
+    }
+
+    .program-text {
+        padding: 10px 0;
+    }
+
+    .program-image img {
+        max-width: 100%;
+        /* image fills screen width */
+    }
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 20px;
+}
+
+@media(min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Responsive Layout */
+@media(max-width: 768px) {
+    .program {
+        flex-direction: column;
+    }
+
+    .program.reverse {
+        flex-direction: column;
+    }
+
+    .program-text,
+    .program-image {
+        padding: 10px;
+    }
+}
