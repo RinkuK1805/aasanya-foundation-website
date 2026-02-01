@@ -1,0 +1,307 @@
+/* Make body and html take full height */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Wrap everything in a flex column */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Content grows to push footer down */
+.content {
+    flex: 1;
+}
+
+.connect {
+    transition: all 0.3s ease;
+}
+
+.connect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+
+/* Main content grows to fill remaining space */
+.content {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    /* space between left and right */
+    align-items: center;
+    /* vertically center items */
+}
+
+/* Left side: logo + name */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-left h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+/* Right side text */
+.header-right p {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.tagline {
+    margin-top: 8px;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    /* aligns all links to the right */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.navbar li {
+    margin: 0 15px;
+    position: relative;
+    /* needed for underline animation */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: 500;
+    padding: 6px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    /* smooth color change */
+}
+
+/* Hover animation: underline sliding from left */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #2e7d32;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    /* underline expands smoothly */
+}
+
+.navbar a:hover {
+    color: #1b5e20;
+    /* optional color change on hover */
+}
+
+
+/* Navbar container */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown link styling */
+.dropdown > a {
+    text-decoration: none;
+    color: #2e7d32;
+    /* padding: 6px 10px; */
+    /* display: block; */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hidden dropdown list */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 230px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: #2e7d32;
+}
+
+.dropdown-content li a:hover {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* slide up into place */
+}
+
+/* Dropdown container for Connect With Us */
+.connect-dropdown {
+    position: relative;
+}
+
+/* Hidden dropdown links */
+.connect-dropdown .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0; /* align dropdown under the button */
+    background-color: #ffffff;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    opacity: 0;        /* hidden by default */
+    visibility: hidden; 
+    transform: translateY(10px); /* slide down effect */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+/* Show dropdown on hover */
+.connect-dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* slide into place */
+}
+
+/* Dropdown links styling */
+.connect-dropdown .dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.connect-dropdown .dropdown-content li a:hover {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+
+
+
+.image-container img:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.image-container {
+    width: 100%;
+    padding: 50px 100px;
+    box-sizing: border-box;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* VERY IMPORTANT */
+    display: block;
+    object-fit: contain;
+    /* prevents cutting */
+}
+
+/* Footer - sticky at bottom */
+.footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px 20px;
+}
+
+@media(min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
