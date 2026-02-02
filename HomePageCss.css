@@ -353,7 +353,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 10%;
+    padding: 80px 17% 80px 10%;
     background: #f4f9f4;
     gap: 40px;
 }
