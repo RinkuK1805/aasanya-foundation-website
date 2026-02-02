@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asanya Foundation</title>
+    <link rel="stylesheet" href="HomePageCss.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <span class="icon">🌱</span>
+            <h1>Asanya Foundation</h1>
+        </div>
+        <div class="header-right">
+            <p>Pay Back to Society</p>
+        </div>
+    </header>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+
+            <!-- Our Programs Dropdown -->
+            <li class="dropdown">
+                <a href="#programs">Our Programs</a>
+
+                <ul class="dropdown-content">
+                    <li><a href="#education">Education Scholarships</a></li>
+                    <li><a href="#girlsHostel">Girls’ Hostels</a></li>
+                    <li><a href="#oldAgeHome">Old Age Home</a></li>
+                </ul>
+            </li>
+            <!-- Connect With Us Dropdown -->
+            <li class="dropdown connect-dropdown">
+                <a href="#" class="connect">Connect With Us</a>
+                <ul class="dropdown-content">
+                    <li><a href="https://wa.me/1234567890" target="_blank">WhatsApp</a></li>
+                    <li><a href="https://instagram.com/yourhandle" target="_blank">Instagram</a></li>
+                </ul>
+            </li>
+            <li class="donate-btn"><a href="#donate">Donate ₹1</a></li>
+
+
+        </ul>
+    </nav>
+
+
+
+
+
+
+    <!-- Main Content (Placeholder) -->
+    <main class="content">
+        <h2>Welcome to Asanya Foundation</h2>
+        <p>
+            We work to strengthen communities, uphold human dignity,
+            and create a just and equal society through education,
+            social reform, and compassion.
+        </p>
+        <div class="image-container">
+            <img src="aasanya/WhatsApp Image 2026-01-25 at 2.51.10 PM.jpeg" alt="Aasanya Foundation">
+        </div>
+    </main>
+
+    <section id="programs" class="programs-section">
+
+        <!-- Program 1: Education Scholarships -->
+        <div class="program" id="education">
+            <div class="program-text">
+                <h2>Education Scholarships</h2>
+                <p>
+                    We provide monthly scholarships of ₹2,500 to 40 bright but underprivileged students
+                    pursuing elite courses like IIT and MBBS. Our aim is to empower the next generation of leaders.
+                </p>
+                <a href="https://chat.whatsapp.com/YourGroupLink" target="_blank" class="whatsapp-btn">
+                    Join WhatsApp Group
+                </a>
+            </div>
+            <div class="program-image">
+                <img src="aasanya/girl.jpeg" alt="Education Scholarships">
+            </div>
+        </div>
+
+        <!-- Program 2: Girls Hostels -->
+        <div class="program reverse" id="girlsHostel">
+            <div class="program-image">
+                <img src="aasanya/Empower-the-institute-for-personal-growth2.jpeg" alt="Girls Hostel">
+            </div>
+            <div class="program-text">
+                <h2>Girls’ Hostels</h2>
+                <p>
+                    Dedicated hostels in Chandrapur and Nagpur provide safe accommodation and nutritious meals
+                    to hardworking students from underprivileged backgrounds.
+                </p>
+                <a href="https://chat.whatsapp.com/YourGroupLink" target="_blank" class="whatsapp-btn">
+                    Join WhatsApp Group
+                </a>
+            </div>
+        </div>
+
+        <!-- Program 3: Old Age Home -->
+        <div class="program" id="oldAgeHome">
+            <div class="program-text">
+                <h2>Old Age Home</h2>
+                <p>
+                    An old age home in Belora offers free food and shelter to elderly individuals
+                    with no family support, helping them live with dignity.
+                </p>
+                <a href="https://chat.whatsapp.com/YourGroupLink" target="_blank" class="whatsapp-btn">
+                    Join WhatsApp Group
+                </a>
+            </div>
+            <div class="program-image">
+                <img src="aasanya/green-mission.jpeg" alt="Old Age Home">
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <section id="donate" class="donate-section">
+        <div class="donate-text">
+            <h2>🌱 One Rupee. One Heart. One Change.</h2>
+
+            <p>
+                ❤️ ₹1 Can Change a Life <br><br>
+                Alone, ₹1 feels small.
+                Together, it becomes hope.
+            </p>
+
+            <p>
+                📚 Education for students <br>
+                👵 Dignity for elders <br>
+                🏥 Help in medical emergencies
+            </p>
+
+            <p><strong>You don’t need to be rich to help. You just need to care.</strong></p>
+
+            <a href="upi://pay?pa=7709512445.eazypay@icici&pn=Aasanya%20Foundation&am=1&cu=INR" class="upi-btn">
+                🙏 Donate ₹1 via UPI
+            </a>
+
+            <a href="https://wa.me/?text=I%20just%20donated%20₹1%20to%20Aasanya%20Foundation.%20Join%20me%20🌱"
+                target="_blank" class="whatsapp-share">
+                📤 Share on WhatsApp
+            </a>
+
+            <p class="donation-count">
+                ❤️ People joined this movement: <strong>1,248</strong>
+            </p>
+        </div>
+
+        <div class="donate-qr fade-in">
+            <img src="aasanya/QR code.jpeg" alt="Donate ₹1 QR Code">
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Asanya Foundation. All Rights Reserved.</p>
+        <p>Built on the values of Unity, Equality, and Justice.</p>
+    </footer>
+
+
+    <script>
+        window.addEventListener("scroll", () => {
+            const qr = document.querySelector(".fade-in");
+            if (!qr) return;
+
+            const position = qr.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+
+            if (position < screenHeight - 100) {
+                qr.classList.add("show");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
