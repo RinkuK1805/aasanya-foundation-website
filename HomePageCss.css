@@ -12,7 +12,6 @@ html {
 }
 
 /* Wrap everything in a flex column */
-
 body {
     display: flex;
     flex-direction: column;
@@ -20,21 +19,6 @@ body {
 }
 
 /* Content grows to push footer down */
-.content {
-    flex: 1;
-}
-
-.connect {
-    transition: all 0.3s ease;
-}
-
-.connect:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-
-/* Main content grows to fill remaining space */
 .content {
     flex: 1;
     padding: 40px 20px;
@@ -48,7 +32,6 @@ body {
     margin: 20px auto;
 }
 
-
 /* Header */
 .header {
     background: linear-gradient(135deg, #2e7d32, #1b5e20);
@@ -56,12 +39,9 @@ body {
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    /* space between left and right */
     align-items: center;
-    /* vertically center items */
 }
 
-/* Left side: logo + name */
 .header-left {
     display: flex;
     align-items: center;
@@ -78,30 +58,10 @@ body {
     font-size: 2rem;
 }
 
-/* Right side text */
 .header-right p {
     font-size: 1rem;
     font-style: italic;
     margin: 0;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo h1 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.tagline {
-    margin-top: 8px;
-    font-size: 1rem;
-    font-style: italic;
-    opacity: 0.9;
 }
 
 /* Navbar */
@@ -110,20 +70,21 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* 🔹 Changed: Navbar items aligned left */
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    /* aligns all links to the right */
+    justify-content: flex-start;
+    /* LEFT aligned */
     flex-wrap: wrap;
     margin: 0;
     padding: 10px 20px;
 }
 
+/* Navbar items */
 .navbar li {
     margin: 0 15px;
     position: relative;
-    /* needed for underline animation */
 }
 
 .navbar a {
@@ -133,7 +94,6 @@ body {
     padding: 6px 0;
     position: relative;
     transition: color 0.3s ease;
-    /* smooth color change */
 }
 
 /* Hover animation: underline sliding from left */
@@ -150,22 +110,10 @@ body {
 
 .navbar a:hover::after {
     width: 100%;
-    /* underline expands smoothly */
 }
 
 .navbar a:hover {
     color: #1b5e20;
-    /* optional color change on hover */
-}
-
-
-/* Navbar container */
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 10px 20px;
 }
 
 /* Dropdown container */
@@ -173,23 +121,18 @@ body {
     position: relative;
 }
 
-/* Dropdown link styling */
 .dropdown>a {
-    text-decoration: none;
-    color: #2e7d32;
-    /* padding: 6px 10px; */
-    /* display: block; */
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-/* Hidden dropdown list */
+/* 🔹 Hidden dropdown list */
 .dropdown-content {
     position: absolute;
     top: 100%;
     right: 0;
     background-color: #fff;
-    min-width: 230px;
+    min-width: 150%;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
@@ -199,15 +142,30 @@ body {
     z-index: 1000;
 }
 
-/* Dropdown links */
-.dropdown-content li a {
-    display: block;
-    padding: 10px 15px;
-    color: #2e7d32;
+/* 🔹 Only for Our Programs dropdown */
+.dropdown-content .contentOfDropdown {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    list-style: none;
+    /* No bullets */
 }
 
-.dropdown-content li a:hover {
-    background-color: #e8f5e9;
+/* 🔹 Flipkart-style layout for Our Programs dropdown items */
+.dropdown-content .contentOfDropdown a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* Hover effect for Our Programs dropdown */
+.dropdown-content .contentOfDropdown a:hover {
+    background-color: #f1f8f4;
     color: #1b5e20;
 }
 
@@ -216,44 +174,35 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* slide up into place */
 }
 
-/* Dropdown container for Connect With Us */
+/* Connect With Us dropdown */
 .connect-dropdown {
     position: relative;
 }
 
-/* Hidden dropdown links */
 .connect-dropdown .dropdown-content {
     position: absolute;
     top: 100%;
     right: 0;
-    /* align dropdown under the button */
     background-color: #ffffff;
     min-width: 150px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
     opacity: 0;
-    /* hidden by default */
     visibility: hidden;
     transform: translateY(10px);
-    /* slide down effect */
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
     flex-direction: column;
 }
 
-/* Show dropdown on hover */
 .connect-dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    /* slide into place */
 }
 
-/* Dropdown links styling */
 .connect-dropdown .dropdown-content li a {
     display: block;
     padding: 10px 15px;
@@ -268,9 +217,9 @@ body {
     color: #1b5e20;
 }
 
+/* Program Section */
 .programs-section {
     padding: 70px 10%;
-    background: #f9f9f9;
 }
 
 .program {
@@ -305,14 +254,79 @@ body {
     text-align: center;
 }
 
+/* Program image hover animation */
 .program-image img {
     width: 100%;
     max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* smooth transition */
 }
 
-/* Responsive */
+/* Main content image hover animation */
+.image-container img {
+    width: 80%;
+    /* max-width: 600px; */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.03) translateY(-3px);
+    /* slightly zoom + lift */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    /* stronger shadow */
+    filter: brightness(1.05);
+    /* slightly brighter */
+}
+
+/* Donate QR hover animation */
+.donate-qr img {
+    width: 260px;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.donate-qr img:hover {
+    transform: scale(1.05) rotate(-1deg);
+    /* slight zoom + subtle tilt */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    /* stronger shadow */
+    filter: brightness(1.05);
+    /* slightly brighter */
+    cursor: pointer;
+}
+
+/* Scroll animation already in place */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.qr-caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #2e7d32;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.program-image img:hover {
+    transform: scale(1.05);
+    /* slightly zoom in */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    /* stronger shadow on hover */
+}
+
 @media (max-width: 768px) {
 
     .program,
@@ -325,30 +339,6 @@ body {
         max-width: 80%;
     }
 }
-
-
-
-.image-container img:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-}
-
-.image-container {
-    width: 100%;
-    padding: 50px 100px;
-    box-sizing: border-box;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    /* VERY IMPORTANT */
-    display: block;
-    object-fit: contain;
-    /* prevents cutting */
-}
-
 
 /* Donate Section */
 .donate-section {
@@ -369,46 +359,43 @@ body {
     margin-bottom: 20px;
 }
 
-.upi-btn {
+/* General button animation */
+.whatsapp-btn,
+.upi-btn,
+.whatsapp-share {
+    transition: all 0.3s ease;
+    /* smooth transition */
+}
+
+.whatsapp-btn:hover,
+.upi-btn:hover,
+.whatsapp-share:hover {
+    transform: scale(1.05);
+    /* slightly bigger */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* lift effect */
+    cursor: pointer;
+    /* pointer on hover */
+}
+
+
+.upi-btn,
+.whatsapp-share,
+.whatsapp-btn {
     display: inline-block;
-    margin-top: 15px;
+    margin: 10px;
     padding: 12px 22px;
     background: #2e7d32;
     color: white;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
-}
-
-.whatsapp-share {
-    display: inline-block;
-    margin-left: 15px;
-    padding: 12px 20px;
-    background: #2e7d32;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-}
-
-.whatsapp-btn {
-    display: inline-block;
-    background-color: #2e7d32;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    font-size: 1rem;
-    margin-top: 5%;
 }
 
 .whatsapp-btn:hover {
     background-color: #1ebe57;
-    /* Darker green on hover */
     transform: translateY(-2px);
-    /* Slight lift effect */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -417,19 +404,6 @@ body {
     border-radius: 12px;
 }
 
-/* Scroll Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     .donate-section {
         flex-direction: column;
@@ -437,8 +411,7 @@ body {
     }
 }
 
-
-/* Footer - sticky at bottom */
+/* Footer */
 .footer {
     background-color: #1b5e20;
     color: white;
@@ -457,4 +430,4 @@ body {
     }
 }
 
-/* code by rinki  */
+/* code by rinki */
