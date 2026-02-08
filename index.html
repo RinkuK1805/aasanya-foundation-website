@@ -21,36 +21,46 @@
     </header>
 
 
-    <!-- Navigation Bar -->
+
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About Us</a></li>
+        <div class="nav-left">
+            <!-- Mobile menu checkbox -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
 
-            <!-- Our Programs Dropdown -->
-            <li class="dropdown">
-                <a href="#programs">Our Programs</a>
+            <!-- Dropdown Menu -->
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#programs">Our Programs</a>
 
-                <ul class="dropdown-content">
-                    <li class="contentOfDropdown"><a href="#education">Scholarships</a></li>
-                    <li class="contentOfDropdown"><a href="#girlsHostel">Girls’ Hostels</a></li>
-                    <li class="contentOfDropdown"><a href="#oldAgeHome">Old Age Home</a></li>
-                </ul>
-            </li>
-            <!-- Connect With Us Dropdown -->
-            <li class="dropdown connect-dropdown">
-                <a href="#" class="connect">Connect With Us</a>
-                <ul class="dropdown-content">
-                    <li class="contentOfDropdown"><a href="https://wa.me/1234567890" target="_blank">WhatsApp</a></li>
-                    <li class="contentOfDropdown"><a href="https://instagram.com/yourhandle"
-                            target="_blank">Instagram</a></li>
-                </ul>
-            </li>
-            <li class="donate-btn"><a href="#donate">Donate ₹1</a></li>
+                    <ul class="dropdown-content">
+                        <li class="contentOfDropdown"><a href="#education">Scholarships</a></li>
+                        <li class="contentOfDropdown"><a href="#girlsHostel">Girls’ Hostels</a></li>
+                        <li class="contentOfDropdown"><a href="#oldAgeHome">Old Age Home</a></li>
+                    </ul>
+                </li>
 
+                <li class="dropdown connect-dropdown">
+                    <a href="#" class="connect">Connect With Us</a>
+                    <ul class="dropdown-content">
+                        <li class="contentOfDropdown"><a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+                        </li>
+                        <li class="contentOfDropdown"><a href="https://instagram.com/yourhandle"
+                                target="_blank">Instagram</a></li>
+                    </ul>
+                </li>
 
-        </ul>
+            </ul>
+        </div>
+
+        <!-- Donate button always on right -->
+        <div class="nav-right">
+            <a href="#donate" class="donate-btn">Donate ₹1</a>
+        </div>
     </nav>
+
 
 
 
@@ -85,20 +95,23 @@
                 </a>
             </div>
             <div class="program-image">
-                <img src="aasanya/girl.jpeg" alt="Education Scholarships">
+                <img src="aasanya/coaching competitative exam.jpeg" alt="Education Scholarships">
             </div>
         </div>
 
-        <!-- Program 2: Girls Hostels -->
+        <!-- Program 2: free coaching -->
         <div class="program reverse" id="girlsHostel">
             <div class="program-image">
-                <img src="aasanya/WhatsApp Image 2026-01-25 at 2.51.10 PM.jpeg" alt="Girls Hostel">
+                <img src="aasanya/free education inyavtmal.jpeg" alt="Girls Hostel">
             </div>
             <div class="program-text">
-                <h2>Girls’ Hostels</h2>
+                <h2>Free Coaching & Guidance</h2>
                 <p>
-                    Dedicated hostels in Chandrapur and Nagpur provide safe accommodation and nutritious meals
-                    to hardworking students from underprivileged backgrounds.
+
+                    Aasanya Foundation provides free coaching classes and career guidance in Yavatmal for students who
+                    cannot afford paid education.<br>
+                    We believe financial limits should never stop learning.
+                    Through education and mentorship, we help students build a better future.
                 </p>
                 <a href="https://chat.whatsapp.com/YourGroupLink" target="_blank" class="whatsapp-btn">
                     Join WhatsApp Group
@@ -119,7 +132,7 @@
                 </a>
             </div>
             <div class="program-image">
-                <img src="aasanya/helping1.jpeg" alt="Old Age Home">
+                <img src="aasanya/oldAgeHome.jpeg" alt="Old Age Home">
             </div>
         </div>
 
@@ -165,7 +178,7 @@
             <p class="scan-text">Scan to Donate</p>
 
             <!-- UPI clickable link (mobile users) -->
-            <a href="upi://pay?pa=7709512445.eazypay@icici&pn=Aasanya%20Foundation" class="upi-link">
+            <a href="upi://pay?pa=7709512445.eazypay@icici&pn=Aasanya%20Foundation" class="upi-btn">
                 Pay via UPI
             </a>
         </div>
