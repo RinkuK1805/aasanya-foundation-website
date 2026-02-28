@@ -811,6 +811,10 @@ body {
     font-weight: 600;
 }
 
+.scan-text{
+    font-weight: 800;
+}
+
 /* ================= BUTTONS ================= */
 .upi-btn,
 .whatsapp-btn,
